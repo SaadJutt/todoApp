@@ -1,0 +1,22 @@
+<div class="card mt-4">
+    <h4 class="card-header">Category</h4>
+    <div class="card-body">
+        <button mat-button (click)="openTempDialog()">Add Category</button>
+        <mat-card class="example-card">
+            <mat-card-content>
+                <mat-list role="list">
+                    <mat-list-item role="listitem" *ngFor="let category of myFooList">{{ category }}</mat-list-item>
+                  </mat-list>
+            </mat-card-content>
+          </mat-card>
+
+          <ng-template #dialogRef >
+            <div class="md-form mt-3">
+                <input type="text" [(ngModel)]="categoryName" id="materialSubscriptionFormPasswords" mdbInput><br>
+                <label for="materialSubscriptionFormPasswords">Category Name</label>
+              </div>
+              <button mat-button (click)="add()" mat-dialog-close="I am from dialog land...">Add</button>
+            <button mat-button mat-dialog-close="I am from dialog land...">Close</button>
+          </ng-template>
+    </div>
+</div>
